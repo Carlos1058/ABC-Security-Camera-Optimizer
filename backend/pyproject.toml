@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camera-optimizer"
+version = "0.1.0"
+description = "ABC Security Camera Optimizer - 2D Geometric Core"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "Carlos", email = "al292797@edu.uaa.mx" },
+]
+dependencies = [
+    "numpy>=2.0.0",
+    "pydantic>=2.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "httpx>=0.25.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --strict-markers"
